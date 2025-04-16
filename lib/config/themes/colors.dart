@@ -9,4 +9,5 @@ class LizoColor {
   static const Color black = Color(0xFF000000);
   static const Color inputBgColor = Color(0xFFFAFAFA);
   static const Color inputBorderColor = Color(0xFFE7E5E4);
+  static const Color otherBorder = Color((0xFFF2F1EA));
 }

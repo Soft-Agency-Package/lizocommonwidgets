@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lizocommonwidgets/config/themes/style_of_app.dart';
 
-class ActionCardLayout extends StatelessWidget {
+class InputLayout extends StatelessWidget {
   final double width;
   final double height;
   final double marginVerticalValue;
   final Widget child;
 
-  const ActionCardLayout({
+  const InputLayout({
     super.key,
     required this.width,
     required this.height,
