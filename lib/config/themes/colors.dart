@@ -7,4 +7,6 @@ class LizoColor {
   static const Color quaternary = Color(0xFFF6F4EF);
   static const Color background = Color(0xFFFFFFFF);
   static const Color black = Color(0xFF000000);
+  static const Color inputBgColor = Color(0xFFFAFAFA);
+  static const Color inputBorderColor = Color(0xFFE7E5E4);
 }

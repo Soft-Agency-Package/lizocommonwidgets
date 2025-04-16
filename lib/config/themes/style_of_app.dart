@@ -18,4 +18,11 @@ class StyleOfApp {
 
   // body
   static TextStyle body = TextStyle(fontSize: 17, fontWeight: FontWeight.w400);
+
+  // input style
+  static BoxDecoration cardInput = BoxDecoration(
+    borderRadius: BorderRadius.circular(14),
+    color: LizoColor.inputBgColor,
+    border: Border.all(color: LizoColor.inputBorderColor, width: 2.0),
+  );
 }
