@@ -1,5 +1,5 @@
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+library;
+
+export 'components/shared/lizo_button.dart';
+export 'config/themes/colors.dart';
+export 'views/launch_view.dart';
