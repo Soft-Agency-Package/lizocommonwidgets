@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class LaunchView extends StatefulWidget {
   final String startImage;
   final String endImage;
   final int durationInSeconds;
-  final Widget nextPage;
+  final String nextPage;
 
   const LaunchView({
     super.key,
@@ -48,9 +49,7 @@ class _LaunchViewState extends State<LaunchView> with TickerProviderStateMixin {
 
     Future.delayed(Duration(seconds: widget.durationInSeconds), () {
       if (!mounted) return;
-      Navigator.of(
-        context,
-      ).pushReplacement(MaterialPageRoute(builder: (_) => widget.nextPage));
+      context.go(widget.nextPage);
     });
   }
 
