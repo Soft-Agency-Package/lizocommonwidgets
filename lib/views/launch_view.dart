@@ -4,11 +4,15 @@ import 'package:flutter_svg/svg.dart';
 class LaunchView extends StatefulWidget {
   final String startImage;
   final String endImage;
+  final int durationInSeconds;
+  final Widget nextPage;
 
   const LaunchView({
     super.key,
     required this.startImage,
     required this.endImage,
+    required this.durationInSeconds,
+    required this.nextPage,
   });
 
   @override
@@ -40,6 +44,13 @@ class _LaunchViewState extends State<LaunchView> with TickerProviderStateMixin {
       setState(() {
         _showFinalScreen = true;
       });
+    });
+
+    Future.delayed(Duration(seconds: widget.durationInSeconds), () {
+      if (!mounted) return;
+      Navigator.of(
+        context,
+      ).pushReplacement(MaterialPageRoute(builder: (_) => widget.nextPage));
     });
   }
 
