@@ -4,6 +4,9 @@ import 'package:lizocommonwidgets/config/themes/colors.dart';
 class StyleOfApp {
   static const String primaryFont = 'Montserrat';
 
+  // font size
+  static const double footerNote = 13;
+
   //  title
 
   static TextStyle largeTile = TextStyle(
