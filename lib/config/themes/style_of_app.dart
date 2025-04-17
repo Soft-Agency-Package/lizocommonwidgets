@@ -25,4 +25,19 @@ class StyleOfApp {
     color: LizoColor.inputBgColor,
     border: Border.all(color: LizoColor.inputBorderColor, width: 2.0),
   );
+
+  // custom style
+  static TextStyle custom({
+    required double size,
+    FontWeight weight = FontWeight.w400,
+    Color color = Colors.black,
+    String font = primaryFont,
+  }) {
+    return TextStyle(
+      fontSize: size,
+      fontWeight: weight,
+      color: color,
+      fontFamily: font,
+    );
+  }
 }
