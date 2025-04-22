@@ -15,6 +15,7 @@ class StyleOfApp {
     fontFamily: primaryFont,
     color: LizoColor.black,
   );
+  
 
   // body
   static TextStyle body = TextStyle(fontSize: 17, fontWeight: FontWeight.w400);
