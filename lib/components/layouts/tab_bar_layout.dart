@@ -10,6 +10,7 @@ class TabBarLayout extends StatelessWidget {
   final double width;
   final double height;
   final int selectedIndex;
+  final ValueChanged<int>? onTabChanged;
 
   const TabBarLayout({
     super.key,
@@ -18,6 +19,7 @@ class TabBarLayout extends StatelessWidget {
     required this.width,
     required this.height,
     required this.selectedIndex,
+    this.onTabChanged,
   });
 
   @override
@@ -46,6 +48,7 @@ class TabBarLayout extends StatelessWidget {
         ),
         labelColor: Colors.white,
         labelStyle: StyleOfApp.body.copyWith(fontSize: 13.5),
+        onTap: onTabChanged,
         tabs: List.generate(tabItems.length, (index) {
           final isSelected = selectedIndex == index;
           final tab = tabItems[index];
