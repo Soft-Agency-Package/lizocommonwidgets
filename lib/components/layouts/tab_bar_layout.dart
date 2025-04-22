@@ -9,6 +9,7 @@ class TabBarLayout extends StatelessWidget {
   final List<TabItem> tabItems;
   final double width;
   final double height;
+  final int selectedIndex;
 
   const TabBarLayout({
     super.key,
@@ -16,6 +17,7 @@ class TabBarLayout extends StatelessWidget {
     required this.tabItems,
     required this.width,
     required this.height,
+    required this.selectedIndex,
   });
 
   @override
@@ -45,7 +47,7 @@ class TabBarLayout extends StatelessWidget {
         labelColor: Colors.white,
         labelStyle: StyleOfApp.body.copyWith(fontSize: 13.5),
         tabs: List.generate(tabItems.length, (index) {
-          final isSelected = tabController.index == index;
+          final isSelected = selectedIndex == index;
           final tab = tabItems[index];
           return Tab(
             child: BuildTabItem(
