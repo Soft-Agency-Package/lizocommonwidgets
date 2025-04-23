@@ -6,7 +6,6 @@ import 'package:lizocommonwidgets/config/themes/style_of_app.dart';
 import 'package:lizocommonwidgets/data/models/tab_item.dart';
 
 class LizoAppBar extends StatefulWidget implements PreferredSizeWidget {
-  final TabController tabController;
   final String title;
   final StateController<int> selectedIndexNotifier;
   final double width;
@@ -20,7 +19,6 @@ class LizoAppBar extends StatefulWidget implements PreferredSizeWidget {
     required this.width,
     required this.tabItems,
     required this.selectedIndex,
-    required this.tabController,
   });
 
   @override
@@ -30,10 +28,29 @@ class LizoAppBar extends StatefulWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(120);
 }
 
-class _LizoAppBarState extends State<LizoAppBar> {
+class _LizoAppBarState extends State<LizoAppBar> with TickerProviderStateMixin {
+  late TabController _tabController;
+
   @override
   void initState() {
     super.initState();
+    _tabController = TabController(length: widget.tabItems.length, vsync: this);
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      widget.selectedIndexNotifier.state = _tabController.index;
+    });
+
+    _tabController.addListener(() {
+      if (_tabController.indexIsChanging) return;
+      widget.selectedIndexNotifier.state = _tabController.index;
+    });
+
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 
   @override
@@ -53,7 +70,7 @@ class _LizoAppBarState extends State<LizoAppBar> {
           children: [
             Container(height: 1.0, color: LizoColor.inputBorderColor),
             TabBarLayout(
-              tabController: widget.tabController,
+              tabController: _tabController,
               tabItems: widget.tabItems,
               width: widget.width,
               height: 35.0,
