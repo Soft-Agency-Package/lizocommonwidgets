@@ -33,7 +33,7 @@ class BuildDeliveryAction extends StatelessWidget {
                 borderRadius: BorderRadius.circular(24.0),
               ),
               child: SvgPicture.asset(
-                "assets/icons/$assetName.svg",
+                'assets/icons/$assetName.svg',
                 width: 43.0,
                 height: 43.0,
               ),
