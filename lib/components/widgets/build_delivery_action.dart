@@ -5,13 +5,13 @@ import 'package:lizocommonwidgets/config/themes/style_of_app.dart';
 
 class BuildDeliveryAction extends StatelessWidget {
   final String title;
-  final String assetName;
+  final String assetPath;
   final VoidCallback onTap;
 
   const BuildDeliveryAction({
     super.key,
     required this.title,
-    required this.assetName,
+    required this.assetPath,
     required this.onTap,
   });
 
@@ -33,7 +33,7 @@ class BuildDeliveryAction extends StatelessWidget {
                 borderRadius: BorderRadius.circular(24.0),
               ),
               child: SvgPicture.asset(
-                'assets/icons/$assetName.svg',
+                assetPath,
                 width: 43.0,
                 height: 43.0,
               ),
