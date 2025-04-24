@@ -36,6 +36,7 @@ class _DynamicPositionedBelowState extends State<DynamicPositionedBelow> {
   @override
   Widget build(BuildContext context) {
     return Stack(
+       clipBehavior: Clip.none,
       children: [
         KeyedSubtree(key: _topKey, child: widget.topChild),
         if (_measuredHeight > 0)
