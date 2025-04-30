@@ -6,16 +6,12 @@ import 'package:lizocommonwidgets/config/themes/style_of_app.dart';
 import 'package:lizocommonwidgets/data/models/bottom_navigation_item.dart';
 
 class LizoBottomNaviguation extends StatefulWidget {
-  final String title;
-  final String assetPath;
   final int selectIndex;
   final List<BottomNavigationItem> bottomNavigationItems;
   final StateController<int> selectedIndexNotifier;
 
   const LizoBottomNaviguation({
     super.key,
-    required this.title,
-    required this.assetPath,
     required this.selectIndex,
     required this.bottomNavigationItems,
     required this.selectedIndexNotifier,
