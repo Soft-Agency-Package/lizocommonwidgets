@@ -11,7 +11,8 @@ BottomNavigationBarItem buildBottomNaviguationItem({
     label: title,
     icon: SvgPicture.asset(
       assetPath,
-      width: 18,
+      width: 24.0,
+      height: 24.0,
       colorFilter: ColorFilter.mode(
         isSelected ? LizoColor.primary : LizoColor.black.withValues(alpha : 0.6),
         BlendMode.srcIn,
