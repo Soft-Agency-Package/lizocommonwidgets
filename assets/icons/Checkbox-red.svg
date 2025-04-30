@@ -1,0 +1,7 @@
+<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Checkbox">
+<rect x="0.992427" y="0.592036" width="22.4974" height="22.4974" rx="11.2487" fill="white"/>
+<rect x="0.992427" y="0.592036" width="22.4974" height="22.4974" rx="11.2487" stroke="#E80404" stroke-width="1.18407"/>
+<circle id="Slider" cx="12.2412" cy="11.8408" r="4.73629" fill="#E80404"/>
+</g>
+</svg>
