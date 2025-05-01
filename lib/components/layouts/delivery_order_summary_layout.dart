@@ -22,6 +22,7 @@ class DeliveryOrderSummaryLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
+      top: 60.0,
       left: 0.0,
       right: 0.0,
       child: Container(
