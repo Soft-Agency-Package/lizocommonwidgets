@@ -18,7 +18,7 @@ class StyleOfApp {
   
 
   // body
-  static TextStyle body = TextStyle(fontSize: 17, fontWeight: FontWeight.w400);
+  static TextStyle body = TextStyle(fontSize: 17, fontWeight: FontWeight.w400, color: LizoColor.black);
 
   // input style
   static BoxDecoration cardInput = BoxDecoration(
