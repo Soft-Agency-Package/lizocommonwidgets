@@ -26,9 +26,9 @@ class _LizoBottomNaviguationState extends State<LizoBottomNaviguation> {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       backgroundColor: LizoColor.background,
-      selectedItemColor: LizoColor.primary,
-      unselectedItemColor: Color(0xFF999999),
       currentIndex: widget.selectIndex,
+      showSelectedLabels: false, 
+      showUnselectedLabels: false,
       unselectedLabelStyle: StyleOfApp.custom(
         size: 10.0,
         weight: FontWeight.w500,
