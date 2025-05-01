@@ -48,22 +48,19 @@ class DeliveryOrderSummaryLayout extends StatelessWidget {
                   spacing: 18.0,
                   children: [
                     child,
-                    IntrinsicWidth(
-                      child: Row(
-                        spacing: 5.0,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: List.generate(orderSummaryTiles.length, (
-                          index,
-                        ) {
-                          final tile = orderSummaryTiles[index];
-                          return LizoDeliveryOrderSummaryTile(
-                            width: width * .25,
-                            height: height,
-                            counter: tile.counter,
-                            title: tile.title,
-                          );
-                        }),
-                      ),
+                    Row(
+                      spacing: 5.0,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: List.generate(orderSummaryTiles.length, (
+                        index,
+                      ) {
+                        final tile = orderSummaryTiles[index];
+                        return LizoDeliveryOrderSummaryTile(
+                          height: height,
+                          counter: tile.counter,
+                          title: tile.title,
+                        );
+                      }),
                     ),
                   ],
                 ),
