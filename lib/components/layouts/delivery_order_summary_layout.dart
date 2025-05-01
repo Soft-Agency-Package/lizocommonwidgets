@@ -25,34 +25,36 @@ class DeliveryOrderSummaryLayout extends StatelessWidget {
       top: 60.0,
       left: 0.0,
       right: 0.0,
-      child: Container(
-        width: width,
-        padding: EdgeInsets.all(6.0),
-        decoration: BoxDecoration(
-          color: LizoColor.quaternary,
-          border: Border.all(color: LizoColor.quaternary, width: 2.0),
-          borderRadius: BorderRadius.circular(18.0),
-        ),
-        child: Column(
-          spacing: 10.0,
-          children: [
-            Container(
-              width: width,
-              padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 14.0),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(18.0),
-              ),
-              child: Column(
-                spacing: 18.0,
-                children: [
-                  child,
-                  IntrinsicWidth(
-                    child: Row(
-                      spacing: 5.0,
-                      children: List.generate(
-                        orderSummaryTiles.length,
-                        (index) {
+      child: IntrinsicHeight(
+        child: Container(
+          width: width,
+          padding: EdgeInsets.all(6.0),
+          decoration: BoxDecoration(
+            color: LizoColor.quaternary,
+            border: Border.all(color: LizoColor.quaternary, width: 2.0),
+            borderRadius: BorderRadius.circular(18.0),
+          ),
+          child: Column(
+            spacing: 10.0,
+            children: [
+              Container(
+                width: width,
+                padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 14.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(18.0),
+                ),
+                child: Column(
+                  spacing: 18.0,
+                  children: [
+                    child,
+                    IntrinsicWidth(
+                      child: Row(
+                        spacing: 5.0,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: List.generate(orderSummaryTiles.length, (
+                          index,
+                        ) {
                           final tile = orderSummaryTiles[index];
                           return LizoDeliveryOrderSummaryTile(
                             width: width * .25,
@@ -60,35 +62,35 @@ class DeliveryOrderSummaryLayout extends StatelessWidget {
                             counter: tile.counter,
                             title: tile.title,
                           );
-                        },
+                        }),
                       ),
                     ),
-                  )
+                  ],
+                ),
+              ),
+              Row(
+                spacing: 5.0,
+                children: [
+                  SvgPicture.asset(
+                    "assets/icons/info_.svg",
+                    width: 14.0,
+                    colorFilter: ColorFilter.mode(
+                      LizoColor.black.withValues(alpha: 0.6),
+                      BlendMode.srcIn,
+                    ),
+                    height: 14.0,
+                  ),
+                  Text(
+                    "Total des commandes journalières",
+                    style: StyleOfApp.body.copyWith(
+                      color: LizoColor.black.withValues(alpha: 0.6),
+                      fontSize: 11.0,
+                    ),
+                  ),
                 ],
               ),
-            ),
-            Row(
-              spacing: 5.0,
-              children: [
-                SvgPicture.asset(
-                  "assets/icons/info_.svg",
-                  width: 14.0,
-                  colorFilter: ColorFilter.mode(
-                    LizoColor.black.withValues(alpha: 0.6),
-                    BlendMode.srcIn,
-                  ),
-                  height: 14.0,
-                ),
-                Text(
-                  "Total des commandes journalières",
-                  style: StyleOfApp.body.copyWith(
-                    color: LizoColor.black.withValues(alpha: 0.6),
-                    fontSize: 11.0,
-                  ),
-                ),
-              ],
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
