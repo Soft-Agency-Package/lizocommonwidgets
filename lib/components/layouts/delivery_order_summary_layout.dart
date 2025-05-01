@@ -69,7 +69,7 @@ class DeliveryOrderSummaryLayout extends StatelessWidget {
                 spacing: 5.0,
                 children: [
                   SvgPicture.asset(
-                    "assets/icons/info_.svg",
+                    "assets/icons/info_icon_app.svg",
                     width: 14.0,
                     colorFilter: ColorFilter.mode(
                       LizoColor.black.withValues(alpha: 0.6),
