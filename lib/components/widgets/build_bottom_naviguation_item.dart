@@ -9,6 +9,7 @@ BottomNavigationBarItem buildBottomNaviguationItem({
   required bool isSelected,
 }) {
   return BottomNavigationBarItem(
+    label: '',
     icon: Column(
       spacing: 5.0,
       mainAxisSize: MainAxisSize.min,
