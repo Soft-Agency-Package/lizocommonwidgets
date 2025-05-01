@@ -17,7 +17,7 @@ BottomNavigationBarItem buildBottomNaviguationItem({
           width: 24.0,
           height: 24.0,
           colorFilter: ColorFilter.mode(
-            isSelected ? LizoColor.primary : const Color(0xFF999999),
+            isSelected ? LizoColor.primary : LizoColor.grey,
             BlendMode.srcIn,
           ),
         ),
@@ -26,7 +26,7 @@ BottomNavigationBarItem buildBottomNaviguationItem({
           style: StyleOfApp.custom(
             size: 10.0,
             weight: FontWeight.w500,
-            color: isSelected ? LizoColor.primary : const Color(0xFF999999),
+            color: isSelected ? LizoColor.primary : LizoColor.grey,
           ),
         ),
       ],
