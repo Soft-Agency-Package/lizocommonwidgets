@@ -8,12 +8,14 @@ class ProfilItemLayout extends StatelessWidget {
   final double width;
   final double verticalMargin;
   final List<BuildProfil> buildProfil;
+  final Function onTap;
 
   const ProfilItemLayout({
     super.key,
     required this.width,
     required this.verticalMargin,
     required this.buildProfil,
+    required this.onTap,
   });
 
   @override
@@ -48,6 +50,7 @@ class ProfilItemLayout extends StatelessWidget {
                     buildProfil[index].profilItems.length,
                     (itemIndex) {
                       return BuildProfilItem(
+                        onTap: onTap , 
                         title: buildProfil[index].profilItems[itemIndex].title,
                         assetPath:
                             buildProfil[index].profilItems[itemIndex].assetPath,
