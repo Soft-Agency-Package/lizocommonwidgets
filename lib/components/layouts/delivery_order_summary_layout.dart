@@ -49,7 +49,6 @@ class DeliveryOrderSummaryLayout extends StatelessWidget {
                   children: [
                     child,
                     Row(
-                      spacing: 5.0,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: List.generate(orderSummaryTiles.length, (
                         index,
