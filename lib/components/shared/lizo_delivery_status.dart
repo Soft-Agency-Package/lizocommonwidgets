@@ -2,20 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:lizocommonwidgets/config/themes/colors.dart';
 
 class LizoDeliveryStatus extends StatelessWidget {
-  final String titleBold;
-  final String titleHighlight;
-  final String availabilityLabel;
-  final String availabilityStatus;
   final bool isRow;
   final double width;
   final List<Widget> children;
 
   const LizoDeliveryStatus({
     super.key,
-    required this.titleBold,
-    required this.titleHighlight,
-    required this.availabilityLabel,
-    required this.availabilityStatus,
     required this.isRow,
     required this.width,
     required this.children,
