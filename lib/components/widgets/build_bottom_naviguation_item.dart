@@ -9,8 +9,9 @@ BottomNavigationBarItem buildBottomNaviguationItem({
   required bool isSelected,
 }) {
   return BottomNavigationBarItem(
-    icon: Row(
+    icon: Column(
       spacing: 5.0,
+      mainAxisSize: MainAxisSize.min,
       children: [
         SvgPicture.asset(
           assetPath,
