@@ -13,6 +13,8 @@ class DeliveryPoint {
 class DeliveryPathView extends StatelessWidget {
   final List<DeliveryPoint> deliveryPoints;
   final List<bool> completedSteps;
+  final Widget activeIcon;
+  final Widget inactiveIcon;
   final double? containerHeight;
   final EdgeInsetsGeometry? containerPadding;
   final Decoration? decoration;
@@ -26,7 +28,7 @@ class DeliveryPathView extends StatelessWidget {
     this.decoration = const BoxDecoration(
       color: Color(0xFFF6F4EF),
       borderRadius: BorderRadius.all(Radius.circular(10)),
-    ),
+    ), required this.activeIcon, required this.inactiveIcon,
   });
 
   @override
@@ -69,8 +71,8 @@ class DeliveryPathView extends StatelessWidget {
     // Ajouter la première icône
     iconsAndLines.add(
       stepsStatus.isNotEmpty && stepsStatus[0]
-          ? CustomIcons.checkboxRed()
-          : CustomIcons.checkbox(),
+          ? activeIcon
+          : inactiveIcon
     );
 
     // Ajouter les lignes et icônes intermédiaires
@@ -93,8 +95,8 @@ class DeliveryPathView extends StatelessWidget {
       // Ajouter l'icône intermédiaire
       iconsAndLines.add(
         i + 1 < stepsStatus.length && stepsStatus[i + 1]
-            ? CustomIcons.checkboxRed()
-            : CustomIcons.checkbox(),
+            ? activeIcon
+            : inactiveIcon
       );
     }
 
@@ -119,7 +121,7 @@ class DeliveryPathView extends StatelessWidget {
     final allStepsCompleted =
         stepsStatus.isNotEmpty && stepsStatus.every((status) => status);
     iconsAndLines.add(
-      allStepsCompleted ? CustomIcons.checkboxRed() : CustomIcons.checkbox(),
+      allStepsCompleted ? activeIcon : inactiveIcon,
     );
 
     return iconsAndLines;
