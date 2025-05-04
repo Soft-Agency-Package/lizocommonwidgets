@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:lizocommonwidgets/components/shared/lizo_icons.dart';
+
 import 'package:lizocommonwidgets/config/themes/colors.dart';
 
 class DeliveryPoint {
