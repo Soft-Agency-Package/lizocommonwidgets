@@ -6,9 +6,9 @@ import 'package:lizocommonwidgets/core/utils/snackbar_util.dart';
 
 class DioInterceptor extends Interceptor {
   final Ref ref;
-  final Provider<String?> tokenProvider;
+  final Future<String?> Function() getToken;
 
-  DioInterceptor(this.ref, this.tokenProvider);
+  DioInterceptor(this.ref, this.getToken);
 
   @override
   void onRequest(
@@ -16,7 +16,7 @@ class DioInterceptor extends Interceptor {
     RequestInterceptorHandler handler,
   ) async {
     print('REQUEST[${options.method}] => PATH: ${options.path}');
-    final token = ref.read(tokenProvider);
+    final token = await getToken();
     if (token != null) {
       options.headers[HttpHeaders.authorizationHeader] = "Bearer $token";
     }
