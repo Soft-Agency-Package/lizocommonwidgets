@@ -4,6 +4,7 @@ import 'package:lizocommonwidgets/config/themes/style_of_app.dart';
 
 class LizoTextField extends StatelessWidget {
   final String placehoder;
+  final bool autofocus;
   final TextEditingController controller;
   final bool obscureText;
   final TextInputType textInputType;
@@ -13,10 +14,12 @@ class LizoTextField extends StatelessWidget {
     required this.controller,
     required this.obscureText,
     required this.textInputType,
+    this.autofocus = false,
   });
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      autofocus: autofocus,
       keyboardType: textInputType,
       obscureText: obscureText,
       controller: controller,
