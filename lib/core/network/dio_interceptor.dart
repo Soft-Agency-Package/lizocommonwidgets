@@ -51,7 +51,12 @@ class DioInterceptor extends Interceptor {
 
     if ([401, 403, 422].contains(err.response?.statusCode)) {
       if (err.response?.statusCode == 422) {
-        ref.read(snackNotifierProvider).show("Some fields are missing .");
+        final errors = err.response?.data["errors"];
+        if (errors is List) {
+          ref.read(snackNotifierProvider).show(errors.join(", "));
+        } else {
+          ref.read(snackNotifierProvider).show(errors.first.toString());
+        }
       }
     } else {
       ref
