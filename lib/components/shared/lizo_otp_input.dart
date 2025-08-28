@@ -50,7 +50,7 @@ class _LizoOtpInputState extends State<LizoOtpInput> {
       }
     } else {
       if (index > 0) {
-        _focusNodes[index - 1].requestFocus();
+        _focusNodes[index].requestFocus();
       }
     }
   }
