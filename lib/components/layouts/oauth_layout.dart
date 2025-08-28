@@ -7,6 +7,7 @@ class OauthLayout extends StatelessWidget {
   final double height;
   final Function onTap;
   final Color bgColor;
+  final bool withBorder;
 
   const OauthLayout({
     super.key,
@@ -15,6 +16,7 @@ class OauthLayout extends StatelessWidget {
     required this.height,
     required this.onTap,
     this.bgColor = Colors.white,
+    this.withBorder = true,
   });
 
   @override
@@ -28,7 +30,10 @@ class OauthLayout extends StatelessWidget {
         decoration: BoxDecoration(
           color: bgColor,
           borderRadius: BorderRadius.circular(24.0),
-          border: Border.all(color: LizoColor.otherBorder, width: 2.37),
+          border:
+              withBorder
+                  ? Border.all(color: LizoColor.otherBorder, width: 2.37)
+                  : null,
         ),
         child: child,
       ),
