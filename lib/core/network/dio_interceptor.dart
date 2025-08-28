@@ -50,7 +50,7 @@ class DioInterceptor extends Interceptor {
     print("###################################");
 
     if ([401, 403, 422].contains(err.response?.statusCode)) {
-      if (err.response?.statusCode == 422) {
+      if (err.response?.statusCode == 422 || err.response?.statusCode == 401) {
         final errors = err.response?.data["errors"];
         if (errors is List) {
           ref.read(snackNotifierProvider).show(errors.join(", "));
